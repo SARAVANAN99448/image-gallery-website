@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<style>
+.image-container{
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    padding: 100px;
+    position: relative;
+    z-index: 1;
+}
+h1{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.overlay{
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.hidden{
+    display: none;
+}
+.img1,.img2,.img3,.img4{
+    text-align: center;
+    position: absolute;
+    left: 43%;
+    top:30%;
+    z-index: 2;
+display:none ;    
+}
+
+.img1 p,.img2 p,.img3 p,.img4 p{
+text-align: right;
+cursor: pointer;
+color: white;
+}
+</style>
+
+    <div class="overlay hidden "></div>
+    <div>
+        <h1>Image Gallery</h1>
+        <div class="image-container">
+            <img src="https://picsum.photos/200/300?1" alt="" class="images1">
+            <img src="https://picsum.photos/200/300?2" alt="" class="images2">
+            <img src="https://picsum.photos/200/300?3" alt="" class="images3">
+            <img src="https://picsum.photos/200/300?4" alt="" class="images4">
+
+        </div>
+    </div>
+    <div class="img1">
+        <p class="closex1"><i class="fa-solid fa-xmark" style="color: white;"></i></p>
+        <img src="https://picsum.photos/200/300?1" alt="">
+    </div>
+    <div class="img2">
+        <p class="closex2"><i class="fa-solid fa-xmark" style="color: white;"></i></p></p>
+        <img src="https://picsum.photos/200/300?2" alt="">
+    </div>
+    <div class="img3">
+        <p class="closex3"><i class="fa-solid fa-xmark" style="color: white;"></i></p></p>
+        <img src="https://picsum.photos/200/300?3" alt="">
+    </div>
+    <div class="img4">
+        <p class="closex4"><i class="fa-solid fa-xmark" style="color: white;"></i></p></p>
+        <img src="https://picsum.photos/200/300?4" alt="">
+    </div>
+    <script>
+        var images1 = document.querySelector(".images1")
+        var overlay =document.querySelector(".overlay")
+        var imgone = document.querySelector(".img1")
+        images1.addEventListener("click",function(){
+        overlay.classList.remove("hidden")
+        imgone.style.display= "block"
+        })
+        var closex1 = document.querySelector(".closex1")
+        closex1.addEventListener("click",function(){
+            overlay.classList.add("hidden")
+            imgone.style.display="none"
+        })          
+// 
+        var images2 = document.querySelector(".images2")
+        var overlay =document.querySelector(".overlay")
+        var imgtwo = document.querySelector(".img2")
+        images2.addEventListener("click",function(){
+        overlay.classList.remove("hidden")
+        imgtwo.style.display= "block"
+        })
+        var closex2 = document.querySelector(".closex2")
+        closex2.addEventListener("click",function(){
+            overlay.classList.add("hidden")
+            imgtwo.style.display="none"
+        })
+
+        // 
+        var images3 = document.querySelector(".images3")
+        var overlay =document.querySelector(".overlay")
+        var imgthree = document.querySelector(".img3")
+        images3.addEventListener("click",function(){
+        overlay.classList.remove("hidden")
+        imgthree.style.display= "block"
+        })
+        var closex3 = document.querySelector(".closex3")
+        closex3.addEventListener("click",function(){
+            overlay.classList.add("hidden")
+            imgthree.style.display="none"
+        })
+
+        // 
+        var images4 = document.querySelector(".images4")
+        var overlay =document.querySelector(".overlay")
+        var imgfour = document.querySelector(".img4")
+        images4.addEventListener("click",function(){
+        overlay.classList.remove("hidden")
+        imgfour.style.display= "block"
+        })
+        var closex4 = document.querySelector(".closex4")
+        closex4.addEventListener("click",function(){
+            overlay.classList.add("hidden")
+            imgfour.style.display="none"
+        })
+    </script>
+    <style>
+        @media screen and (max-width:600px) {
+            .image-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .img1,.img2,.img3,.img4{
+                left: 120px;
+                
+            }
+            
+        }
+    </style>
+</body>
+</html>
